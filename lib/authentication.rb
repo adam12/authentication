@@ -1,7 +1,10 @@
 require_relative "authentication/plugins"
+require_relative "authentication/configurable"
 
 class Authentication
   VERSION = "0.0.1"
+
+  extend Configurable
 
   def self.plugin(mod, ...)
     mod.before_load(self, ...) if mod.respond_to?(:before_load)
