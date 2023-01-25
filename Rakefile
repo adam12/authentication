@@ -2,9 +2,6 @@
 
 require "rubygems"
 require "hoe"
-require "minitest/test_task"
-
-Minitest::TestTask.create
 
 Hoe.plugin :doofus
 Hoe.plugin :gemspec2
