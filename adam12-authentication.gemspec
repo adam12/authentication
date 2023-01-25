@@ -28,12 +28,16 @@ Gem::Specification.new do |s|
     s.add_development_dependency(%q<minitest>.freeze, ["~> 5.17"])
     s.add_development_dependency(%q<hoe-doofus>.freeze, ["~> 1.0"])
     s.add_development_dependency(%q<hoe-gemspec2>.freeze, ["~> 1.1"])
+    s.add_development_dependency(%q<sequel>.freeze, ["~> 5.64"])
+    s.add_development_dependency(%q<sqlite3>.freeze, ["~> 1.6"])
     s.add_development_dependency(%q<rdoc>.freeze, [">= 4.0", "< 7"])
     s.add_development_dependency(%q<hoe>.freeze, ["~> 4.0"])
   else
     s.add_dependency(%q<minitest>.freeze, ["~> 5.17"])
     s.add_dependency(%q<hoe-doofus>.freeze, ["~> 1.0"])
     s.add_dependency(%q<hoe-gemspec2>.freeze, ["~> 1.1"])
+    s.add_dependency(%q<sequel>.freeze, ["~> 5.64"])
+    s.add_dependency(%q<sqlite3>.freeze, ["~> 1.6"])
     s.add_dependency(%q<rdoc>.freeze, [">= 4.0", "< 7"])
     s.add_dependency(%q<hoe>.freeze, ["~> 4.0"])
   end

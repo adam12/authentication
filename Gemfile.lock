@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     adam12-authentication (0.0.1)
-      minitest (~> 5.17)
 
 GEM
   remote: https://rubygems.org/
@@ -18,6 +17,8 @@ GEM
     rake (13.0.6)
     rdoc (6.5.0)
       psych (>= 4.0.0)
+    sequel (5.64.0)
+    sqlite3 (1.6.0-arm64-darwin)
     stringio (3.0.4)
 
 PLATFORMS
@@ -28,7 +29,10 @@ DEPENDENCIES
   hoe (~> 4.0)
   hoe-doofus (~> 1.0)
   hoe-gemspec2 (~> 1.1)
+  minitest (~> 5.17)
   rdoc (>= 4.0, < 7)
+  sequel (~> 5.64)
+  sqlite3 (~> 1.6)
 
 BUNDLED WITH
    2.3.26
