@@ -1,8 +1,12 @@
 class Authentication
   module Plugins
     module Core
-      def self.before_load(*)
+      def self.before_load(mod, *)
         require "securerandom"
+
+        mod.class_eval do
+          setting :db
+        end
       end
 
       module ClassMethods
