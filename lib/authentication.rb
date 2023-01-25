@@ -7,11 +7,11 @@ class Authentication
     mod.before_load(self, ...) if mod.respond_to?(:before_load)
 
     if defined?(mod::InstanceMethods)
-      self.include(mod::InstanceMethods)
+      include(mod::InstanceMethods)
     end
 
     if defined?(mod::ClassMethods)
-      self.extend(mod::ClassMethods)
+      extend(mod::ClassMethods)
     end
 
     mod.after_load(self, ...) if mod.respond_to?(:after_load)
