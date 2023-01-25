@@ -13,6 +13,7 @@ Hoe.spec "adam12-authentication" do
   developer "Adam Daniels", "adam@mediadrive.ca"
   license "MIT"
 
+  dependency "dry-configurable", "~> 1.0"
   dependency "minitest", "~> 5.17", :dev
   dependency "hoe-doofus", "~> 1.0", :dev
   dependency "hoe-gemspec2", "~> 1.1", :dev

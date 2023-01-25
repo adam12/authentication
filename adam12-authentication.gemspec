@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = "FIX (describe your package)".freeze
   s.email = ["adam@mediadrive.ca".freeze]
   s.extra_rdoc_files = ["History.txt".freeze, "Manifest.txt".freeze, "README.txt".freeze]
-  s.files = [".autotest".freeze, "History.txt".freeze, "Manifest.txt".freeze, "README.txt".freeze, "Rakefile".freeze, "lib/authentication.rb".freeze]
+  s.files = ["History.txt".freeze, "Manifest.txt".freeze, "README.txt".freeze, "Rakefile".freeze, "lib/authentication.rb".freeze, "lib/authentication/plugins.rb".freeze, "lib/authentication/plugins/bcrypt.rb".freeze, "lib/authentication/plugins/core.rb".freeze]
   s.homepage = "https://github.com/adam12/authentication".freeze
   s.licenses = ["MIT".freeze]
   s.rdoc_options = ["--main".freeze, "README.txt".freeze]
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   end
 
   if s.respond_to? :add_runtime_dependency then
+    s.add_runtime_dependency(%q<dry-configurable>.freeze, ["~> 1.0"])
     s.add_development_dependency(%q<minitest>.freeze, ["~> 5.17"])
     s.add_development_dependency(%q<hoe-doofus>.freeze, ["~> 1.0"])
     s.add_development_dependency(%q<hoe-gemspec2>.freeze, ["~> 1.1"])
@@ -34,6 +35,7 @@ Gem::Specification.new do |s|
     s.add_development_dependency(%q<rdoc>.freeze, [">= 4.0", "< 7"])
     s.add_development_dependency(%q<hoe>.freeze, ["~> 4.0"])
   else
+    s.add_dependency(%q<dry-configurable>.freeze, ["~> 1.0"])
     s.add_dependency(%q<minitest>.freeze, ["~> 5.17"])
     s.add_dependency(%q<hoe-doofus>.freeze, ["~> 1.0"])
     s.add_dependency(%q<hoe-gemspec2>.freeze, ["~> 1.1"])
