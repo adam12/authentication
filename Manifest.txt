@@ -3,6 +3,8 @@ Manifest.txt
 README.txt
 Rakefile
 lib/authentication.rb
+lib/authentication/configurable.rb
+lib/authentication/version.rb
 lib/authentication/plugins.rb
 lib/authentication/plugins/bcrypt.rb
 lib/authentication/plugins/core.rb
