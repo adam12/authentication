@@ -11,7 +11,7 @@ class Authentication
     end
 
     if defined?(mod::ClassMethods)
-      self.include(mod::ClassMethods)
+      self.extend(mod::ClassMethods)
     end
 
     mod.after_load(self, ...) if mod.respond_to?(:after_load)
