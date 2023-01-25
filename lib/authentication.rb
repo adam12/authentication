@@ -1,9 +1,8 @@
 require_relative "authentication/plugins"
 require_relative "authentication/configurable"
+require_relative "authentication/version"
 
 class Authentication
-  VERSION = "0.0.1"
-
   extend Configurable
 
   def self.plugin(mod, ...)
