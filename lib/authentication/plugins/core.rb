@@ -16,6 +16,20 @@ class Authentication
           SecureRandom.urlsafe_base64(32)
         end
       end
+
+      module InstanceMethods
+        def db
+          self.class.db
+        end
+
+        def config
+          self.class.config
+        end
+
+        def instrument(...)
+          config.instrumenter.instrument(...)
+        end
+      end
     end
   end
 end
