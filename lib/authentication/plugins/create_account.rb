@@ -23,11 +23,11 @@ class Authentication
           instrument("authentication.create_account", {username: username}) do
             id =
               db
-              .from(config.accounts_table)
-              .insert({
-                config.username_column => username,
-                config.password_digest_column => self.class.digest_password(password)
-              })
+                .from(config.accounts_table)
+                .insert({
+                  config.username_column => username,
+                  config.password_digest_column => self.class.digest_password(password)
+                })
 
             db.from(config.accounts_table).where(id: id).single_record
           end

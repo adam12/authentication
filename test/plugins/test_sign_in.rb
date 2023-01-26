@@ -35,7 +35,6 @@ class Authentication
       end
 
       def test_sign_in_incorrect_password
-
         authentication = Class.new(Authentication) do
           plugin Authentication::Plugins::SignIn
           config.db = DB
