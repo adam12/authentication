@@ -8,5 +8,6 @@ class Authentication
     autoload :Instrumenter, __dir__ + "/plugins/instrumenter.rb"
     autoload :ResetPassword, __dir__ + "/plugins/reset_password.rb"
     autoload :SessionBase, __dir__ + "/plugins/session_base.rb"
+    autoload :SignIn, __dir__ + "/plugins/sign_in.rb"
   end
 end
