@@ -7,7 +7,7 @@ class Authentication
 
         mod.class_eval do
           setting :db, reader: true
-          setting :instrumenter, default: -> { Instrumenters::Noop }
+          setting :instrumenter, default: Instrumenters::Noop
         end
       end
 
