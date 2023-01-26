@@ -1,9 +1,13 @@
 require "test_init"
 
-class Authentication::Plugins::TestCore < Authentication::PluginTest
-  def test_random_key
-    authentication = Class.new(Authentication)
+class Authentication
+  module Plugins
+    class TestCore < PluginTest
+      def test_random_key
+        authentication = Class.new(Authentication)
 
-    assert_equal 43, authentication.random_key.size
+        assert_equal 43, authentication.random_key.size
+      end
+    end
   end
 end
