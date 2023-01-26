@@ -8,18 +8,18 @@ bugs  :: https://github.com/adam12/authentication/issues
 == DESCRIPTION:
 
 An API-first authentication library, with some functionality
-mirroring the rodauth project.
+mirroring the Rodauth project.
 
 == FEATURES/PROBLEMS:
 
-I've found that I generally override so much of rodauth functionality,
+I've found that I generally override so much of Rodauth functionality,
 I'm receiving less and less benefit of the built in HTTP interface that
 it offers.
 
 I'd much rather control that interface and interact with an API focused
 version of that.
 
-The internal_request plugin that was added to rodauth mirrored what I had
+The +internal_request+ plugin that was added to Rodauth mirrored what I had
 been doing for some time, but I'd still like to invert the problem, and
 call the API for most functionality.
 
