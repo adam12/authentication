@@ -7,7 +7,7 @@ require "standard/rake"
 Hoe.plugin :doofus
 Hoe.plugin :gemspec2
 # Hoe.plugin :cov
-# Hoe.plugin :rdoc
+Hoe.plugin :rdoc
 
 Hoe.spec "adam12-authentication" do
   developer "Adam Daniels", "adam@mediadrive.ca"
