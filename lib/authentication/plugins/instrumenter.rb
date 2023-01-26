@@ -22,6 +22,12 @@ class Authentication
       module InstanceMethods
         ##
         # Instrument the provided block
+        #
+        # The actual implementation is instrument provider specific, but it is
+        # expected that the instrumenter returns the value of the block.
+        #
+        # :call-seq:
+        #   instrument(name, payload = {})
         def instrument(...)
           self.class.instrumenter.instrument(...)
         end
