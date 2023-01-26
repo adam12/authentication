@@ -9,5 +9,6 @@ class Authentication
     autoload :ResetPassword, __dir__ + "/plugins/reset_password.rb"
     autoload :SessionBase, __dir__ + "/plugins/session_base.rb"
     autoload :SignIn, __dir__ + "/plugins/sign_in.rb"
+    autoload :SignOut, __dir__ + "/plugins/sign_out.rb"
   end
 end
