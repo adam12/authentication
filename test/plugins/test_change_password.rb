@@ -2,7 +2,7 @@ require "test_init"
 
 class Authentication
   module Plugins
-    class TestChangePassword < Minitest::Test
+    class TestChangePassword < PluginTest
       def test_changing_password_of_valid_account
         authentication = Class.new(Authentication) do
           plugin Authentication::Plugins::ChangePassword

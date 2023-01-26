@@ -1,6 +1,6 @@
 require "test_init"
 
-class Authentication::Plugins::TestBCrypt < Minitest::Test
+class Authentication::Plugins::TestBCrypt < Authentication::Test
   def test_digest_password
     authentication = Class.new(Authentication) do
       plugin Authentication::Plugins::BCrypt

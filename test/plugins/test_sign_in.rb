@@ -2,7 +2,7 @@ require "test_init"
 
 class Authentication
   module Plugins
-    class TestSignIn < Minitest::Test
+    class TestSignIn < PluginTest
       def test_sign_in
         authentication = Class.new(Authentication) do
           plugin Authentication::Plugins::SignIn

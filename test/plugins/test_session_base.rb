@@ -2,7 +2,7 @@ require "test_init"
 
 class Authentication
   module Plugins
-    class TestSessionBase < Minitest::Test
+    class TestSessionBase < PluginTest
       def test_account_from_session
         session = {"account_id" => 1}
 

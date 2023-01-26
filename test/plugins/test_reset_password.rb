@@ -2,7 +2,7 @@ require "test_init"
 
 class Authentication
   module Plugins
-    class TestResetPassword < Minitest::Test
+    class TestResetPassword < PluginTest
       def test_reset_password_invalid_request_id
         authentication = Class.new(Authentication) do
           plugin Authentication::Plugins::ResetPassword

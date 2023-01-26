@@ -1,6 +1,6 @@
 require "test_init"
 
-class Authentication::Plugins::TestCore < Minitest::Test
+class Authentication::Plugins::TestCore < Authentication::PluginTest
   def test_random_key
     authentication = Class.new(Authentication)
 
