@@ -1,21 +1,23 @@
 class Authentication
   module Errors
-    # Username is not in system
+    # Username is not in system.
     UnknownUsername = Class.new(StandardError)
 
-    # Password was not correct
+    # Password was not correct.
     IncorrectPassword = Class.new(StandardError)
   end
 
   module Plugins
     ##
-    # Plugin for sign in functionality
+    # Plugin for sign in functionality.
     module SignIn
       def self.before_load(mod, ...)
         mod.plugin AccountBase
         mod.plugin SessionBase
       end
 
+      ##
+      # Methods available on the instance of an Authentication class.
       module InstanceMethods
         ##
         # Sign in with +username+ and +password+, updating +session+ if

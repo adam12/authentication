@@ -2,16 +2,16 @@
 
 class Authentication
   module Errors
-    # Session does not contain an account identifer value
+    # Session does not contain an account identifer value.
     NoSession = Class.new(StandardError)
 
-    # Session contains an account identifier but it was not in database
+    # Session contains an account identifier but it was not in database.
     InvalidAccount = Class.new(StandardError)
   end
 
   module Plugins
     ##
-    # Plugin for common functionality involving sessions
+    # Plugin for common functionality involving sessions.
     #
     # Expects +session+ to be a Hash or object of similar interface.
     module SessionBase
@@ -23,9 +23,11 @@ class Authentication
         end
       end
 
+      ##
+      # Methods available on the instance of an Authentication class.
       module InstanceMethods
         ##
-        # Look up account from +session+
+        # Look up account from +session+.
         #
         # Returns a Hash of the account record.
         # If the session doesn't contain a value, Errors::NoSession is raised.

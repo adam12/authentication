@@ -22,9 +22,11 @@ class Authentication
         end
       end
 
+      ##
+      # Methods available on the instance of an Authentication class.
       module InstanceMethods
         ##
-        # Lookup account by +username+
+        # Lookup account by +username+.
         #
         # Returns Hash of account, or nil if not found.
         def lookup_account(username)
@@ -32,7 +34,7 @@ class Authentication
         end
 
         ##
-        # Lookup account by primary key +id+
+        # Lookup account by primary key +id+.
         #
         # Returns Hash of account, or nil if not found.
         def lookup_account_by_id(id)

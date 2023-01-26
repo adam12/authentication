@@ -19,9 +19,11 @@ class Authentication
         end
       end
 
+      ##
+      # Methods available on the instance of an Authentication class.
       module InstanceMethods
         ##
-        # Instrument the provided block
+        # Instrument the provided block.
         #
         # The actual implementation is instrument provider specific, but it is
         # expected that the instrumenter returns the value of the block.

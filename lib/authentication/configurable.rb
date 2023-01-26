@@ -3,6 +3,10 @@
 require "dry-configurable"
 
 class Authentication
+  ##
+  # Configuration mixin.
+  #
+  # Currently wraps +Dry::Configurable+.
   module Configurable
     def self.extended(base)
       super

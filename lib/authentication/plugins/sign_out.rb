@@ -7,6 +7,8 @@ class Authentication
         mod.plugin SessionBase
       end
 
+      ##
+      # Methods available on the instance of an Authentication class.
       module InstanceMethods
         ##
         # Sign out any active user.

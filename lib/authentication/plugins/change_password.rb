@@ -1,7 +1,7 @@
 class Authentication
   module Plugins
     ##
-    # Plugin for changing account passwords
+    # Plugin for changing account passwords.
     #
     #   class UserAuthentication < Authentication
     #     plugin Authentication::Plugins::ChangePassword
@@ -14,9 +14,11 @@ class Authentication
         mod.plugin AccountBase
       end
 
+      ##
+      # Methods available on the instance of an Authentication class.
       module InstanceMethods
         ##
-        # Change password for +account_id+
+        # Change password for +account_id+.
         def change_password(account_id, new_password)
           instrument("authentication.change_password", {account_id: account_id}) do
             password_digest = self.class.digest_password(new_password)

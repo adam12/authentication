@@ -1,12 +1,12 @@
 class Authentication
   module Errors
-    # Password reset key was not found
+    # Password reset key was not found.
     InvalidPasswordResetKey = Class.new(StandardError)
   end
 
   module Plugins
     ##
-    # Plugin for resetting passwords of accounts
+    # Plugin for resetting passwords of accounts.
     #
     # Example flow
     #
@@ -26,9 +26,11 @@ class Authentication
         end
       end
 
+      ##
+      # Methods available on the instance of an Authentication class.
       module InstanceMethods
         ##
-        # Reset password using provided +request_id+ and +new_password+
+        # Reset password using provided +request_id+ and +new_password+.
         #
         # Returns true if successful.
         # Raises Errors::InvalidPasswordResetKey if the +request_id+ is not found
