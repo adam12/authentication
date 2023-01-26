@@ -3,11 +3,9 @@ class Authentication
     module Core
       def self.before_load(mod, *)
         require "securerandom"
-        require "authentication/instrumenters/noop"
 
         mod.class_eval do
           setting :db, reader: true
-          setting :instrumenter, default: Instrumenters::Noop
         end
       end
 
@@ -24,10 +22,6 @@ class Authentication
 
         def config
           self.class.config
-        end
-
-        def instrument(...)
-          config.instrumenter.instrument(...)
         end
       end
     end

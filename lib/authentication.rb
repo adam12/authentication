@@ -20,4 +20,5 @@ class Authentication
   end
 
   plugin Authentication::Plugins::Core
+  plugin Authentication::Plugins::Instrumenter
 end
