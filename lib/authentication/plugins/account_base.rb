@@ -11,13 +11,13 @@ class Authentication
         mod.plugin BCrypt
 
         mod.class_eval do
-          # Table that contains accounts
+          # Table that contains accounts.
           setting :accounts_table, default: :accounts
 
-          # Column in accounts table that contains username
+          # Column in accounts table that contains username.
           setting :username_column, default: :email
 
-          # Column in accounts table that contains password digest
+          # Column in accounts table that contains password digest.
           setting :password_digest_column, default: :password_digest
         end
       end

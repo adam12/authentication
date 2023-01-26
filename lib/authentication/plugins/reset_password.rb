@@ -20,8 +20,13 @@ class Authentication
         mod.plugin AccountBase
 
         mod.class_eval do
+          # Table that contains password reset keys.
           setting :password_resets_table, default: :account_password_reset_keys
+
+          # Column in password reset table that is the primary key of the account.
           setting :password_resets_table_pk, default: :id
+
+          # Column in the password reset table that is the reset key.
           setting :password_resets_table_key, default: :key
         end
       end
@@ -53,7 +58,7 @@ class Authentication
         end
 
         ##
-        # Generate a reset password request for +username+
+        # Generate a reset password request for +username+.
         #
         # Returns the generated +request_id+ which can be used as part of the
         # notification to the User.
@@ -73,6 +78,8 @@ class Authentication
 
         ##
         # Look up account for given +request_id+ to then be used to change password.
+        #
+        # Returns a Hash of the account record.
         def account_for_reset_password_request(request_id)
           instrument("authentication.account_for_reset_password_request", {request_id: request_id}) do
             account_id = db.from(config.password_resets_table)

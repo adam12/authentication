@@ -15,6 +15,7 @@ class Authentication
 
       def self.before_load(mod, ...)
         mod.class_eval do
+          # Store an intrumenter.
           setting :instrumenter, reader: true, default: Noop
         end
       end

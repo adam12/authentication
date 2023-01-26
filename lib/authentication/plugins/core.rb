@@ -7,6 +7,7 @@ class Authentication
         require "securerandom"
 
         mod.class_eval do
+          # Store a Sequel database connection.
           setting :db, reader: true
         end
       end
