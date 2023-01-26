@@ -1,6 +1,9 @@
 require "minitest/autorun"
 require "authentication"
 require "sequel"
+require "bcrypt"
+
+BCrypt::Engine.cost = 1
 
 class Authentication
   DB = Sequel.mock
