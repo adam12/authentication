@@ -15,6 +15,16 @@ class Authentication
           setting :password_digest_column, default: :password_digest
         end
       end
+
+      module InstanceMethods
+        def lookup_account(username)
+          db.from(config.accounts_table).first(config.username_column => username)
+        end
+
+        def lookup_account_by_id(id)
+          db.from(config.accounts_table).first(id: id)
+        end
+      end
     end
   end
 end
