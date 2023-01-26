@@ -17,39 +17,45 @@ class Authentication
 
       module InstanceMethods
         def reset_password(request_id, new_password)
-          password_digest = self.class.digest_password(new_password)
+          instrument("authentication.reset_password", {request_id: request_id}) do
+            password_digest = self.class.digest_password(new_password)
 
-          account_id = db.from(config.password_resets_table)
-            .where(config.password_resets_table_key => request_id)
-            .get(config.password_resets_table_pk)
+            account_id = db.from(config.password_resets_table)
+              .where(config.password_resets_table_key => request_id)
+              .get(config.password_resets_table_pk)
 
-          raise Errors::InvalidPasswordResetKey if account_id.nil?
+            raise Errors::InvalidPasswordResetKey if account_id.nil?
 
-          db.from(config.accounts_table)
-            .where(id: account_id)
-            .update(config.password_digest_column => password_digest)
+            db.from(config.accounts_table)
+              .where(id: account_id)
+              .update(config.password_digest_column => password_digest)
 
-          true
+            true
+          end
         end
 
         def reset_password_request(username)
-          account = lookup_account(username)
-          request_id = self.class.random_key
+          instrument("authentication.reset_password_request", {username: username}) do
+            account = lookup_account(username)
+            request_id = self.class.random_key
 
-          db.from(config.password_resets_table).insert({
-            config.password_resets_table_pk => account[:id],
-            config.password_resets_table_key => request_id
-          })
+            db.from(config.password_resets_table).insert({
+              config.password_resets_table_pk => account[:id],
+              config.password_resets_table_key => request_id
+            })
 
-          request_id
+            request_id
+          end
         end
 
         def account_for_reset_password_request(request_id)
-          account_id = db.from(config.password_resets_table)
-            .where(config.password_resets_table_key => request_id)
-            .get(config.password_resets_table_pk)
+          instrument("authentication.account_for_reset_password_request", {request_id: request_id}) do
+            account_id = db.from(config.password_resets_table)
+              .where(config.password_resets_table_key => request_id)
+              .get(config.password_resets_table_pk)
 
-          lookup_account_by_id(account_id)
+            lookup_account_by_id(account_id)
+          end
         end
       end
     end
