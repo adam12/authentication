@@ -1,6 +1,12 @@
 class Authentication
   module Plugins
+    ##
+    # Plugin for instrumenting calls to various methods.
+    #
+    # Accepts an instrumenter that matches the signature of ActiveSupport::Notifications.
     module Instrumenter
+      ##
+      # An instrumenter that does nothing.
       module Noop
         def self.instrument(name, payload = {})
           yield payload if defined?(yield)
@@ -14,6 +20,8 @@ class Authentication
       end
 
       module InstanceMethods
+        ##
+        # Instrument the provided block
         def instrument(...)
           self.class.instrumenter.instrument(...)
         end

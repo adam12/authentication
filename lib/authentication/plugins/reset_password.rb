@@ -1,9 +1,20 @@
 class Authentication
   module Errors
+    # Password reset key was not found
     InvalidPasswordResetKey = Class.new(StandardError)
   end
 
   module Plugins
+    ##
+    # Plugin for resetting passwords of accounts
+    #
+    # Example flow
+    #
+    #   request_id = user_authentication.reset_password_request("user@example.com")
+    #
+    #   # Send request_id to user to confirm, bringing them back to app
+    #
+    #   user_authentication.reset_password(request_id, "their-new-password")
     module ResetPassword
       def self.before_load(mod, ...)
         mod.plugin AccountBase
@@ -16,6 +27,11 @@ class Authentication
       end
 
       module InstanceMethods
+        ##
+        # Reset password using provided +request_id+ and +new_password+
+        #
+        # Returns true if successful.
+        # Raises Errors::InvalidPasswordResetKey if the +request_id+ is not found
         def reset_password(request_id, new_password)
           instrument("authentication.reset_password", {request_id: request_id}) do
             password_digest = self.class.digest_password(new_password)
@@ -34,6 +50,11 @@ class Authentication
           end
         end
 
+        ##
+        # Generate a reset password request for +username+
+        #
+        # Returns the generated +request_id+ which can be used as part of the
+        # notification to the User.
         def reset_password_request(username)
           instrument("authentication.reset_password_request", {username: username}) do
             account = lookup_account(username)
@@ -48,6 +69,8 @@ class Authentication
           end
         end
 
+        ##
+        # Look up account for given +request_id+ to then be used to change password.
         def account_for_reset_password_request(request_id)
           instrument("authentication.account_for_reset_password_request", {request_id: request_id}) do
             account_id = db.from(config.password_resets_table)
