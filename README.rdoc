@@ -1,4 +1,4 @@
-= foo
+= Authentication
 
 home  :: https://github.com/adam12/authentication
 code  :: https://github.com/adam12/authentication
@@ -7,11 +7,21 @@ bugs  :: https://github.com/adam12/authentication/issues
 
 == DESCRIPTION:
 
-FIX (describe your package)
+An API-first authentication library, with some functionality
+mirroring the rodauth project.
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
+I've found that I generally override so much of rodauth functionality,
+I'm receiving less and less benefit of the built in HTTP interface that
+it offers.
+
+I'd much rather control that interface and interact with an API focused
+version of that.
+
+The internal_request plugin that was added to rodauth mirrored what I had
+been doing for some time, but I'd still like to invert the problem, and
+call the API for most functionality.
 
 == SYNOPSIS:
 
@@ -23,7 +33,7 @@ FIX (describe your package)
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+  bundle add adam12-authentication
 
 == DEVELOPERS:
 
@@ -38,7 +48,7 @@ and generate the RDoc.
 
 (The MIT License)
 
-Copyright (c) 2023 FIX
+Copyright (c) 2023 Adam Daniels
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
