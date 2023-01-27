@@ -13,18 +13,14 @@ class Authentication
       end
 
       ##
-      # Methods available on the class of an Authentication subclass.
-      module ClassMethods
+      # Methods available on the instance of an Authentication class.
+      module InstanceMethods
         ##
         # URL-safe random key.
         def random_key
           SecureRandom.urlsafe_base64(32)
         end
-      end
 
-      ##
-      # Methods available on the instance of an Authentication class.
-      module InstanceMethods
         ##
         # Shortcut to +db+ config value.
         def db

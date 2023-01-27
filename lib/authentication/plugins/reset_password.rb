@@ -65,7 +65,7 @@ class Authentication
         def reset_password_request(username)
           instrument("authentication.reset_password_request", {username: username}) do
             account = lookup_account(username)
-            request_id = self.class.random_key
+            request_id = random_key
 
             db.from(config.password_resets_table).insert({
               config.password_resets_table_pk => account[:id],

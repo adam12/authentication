@@ -4,7 +4,7 @@ class Authentication
   module Plugins
     class TestCore < PluginTest
       def test_random_key
-        authentication = Class.new(Authentication)
+        authentication = Class.new(Authentication).new
 
         assert_equal 43, authentication.random_key.size
       end
