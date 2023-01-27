@@ -41,7 +41,7 @@ class Authentication
         # Raises Errors::InvalidPasswordResetKey if the +request_id+ is not found
         def reset_password(request_id, new_password)
           instrument("authentication.reset_password", {request_id: request_id}) do
-            password_digest = self.class.digest_password(new_password)
+            password_digest = digest_password(new_password)
 
             account_id = db.from(config.password_resets_table)
               .where(config.password_resets_table_key => request_id)

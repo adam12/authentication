@@ -34,7 +34,7 @@ class Authentication
 
             raise Errors::UnknownUsername if account.nil?
 
-            if !self.class.validate_password(password, account[config.password_digest_column])
+            if !validate_password(password, account[config.password_digest_column])
               raise Errors::IncorrectPassword
             end
 

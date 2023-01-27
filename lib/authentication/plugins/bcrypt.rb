@@ -8,8 +8,8 @@ class Authentication
       end
 
       ##
-      # Methods available on the class of an Authentication subclass.
-      module ClassMethods
+      # Methods available on the instance of an Authentication class.
+      module InstanceMethods
         ##
         # Convert string +password+ into BCrypt digest.
         #

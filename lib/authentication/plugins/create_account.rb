@@ -28,7 +28,7 @@ class Authentication
                 .from(config.accounts_table)
                 .insert({
                   config.username_column => username,
-                  config.password_digest_column => self.class.digest_password(password)
+                  config.password_digest_column => digest_password(password)
                 })
 
             db.from(config.accounts_table).where(id: id).single_record

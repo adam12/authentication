@@ -21,7 +21,7 @@ class Authentication
         # Change password for +account_id+.
         def change_password(account_id, new_password)
           instrument("authentication.change_password", {account_id: account_id}) do
-            password_digest = self.class.digest_password(new_password)
+            password_digest = digest_password(new_password)
 
             db.from(config.accounts_table)
               .where(id: account_id)
