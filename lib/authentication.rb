@@ -3,8 +3,6 @@ require_relative "authentication/configurable"
 require_relative "authentication/version"
 
 ##
-# :include: README.rdoc
-
 class Authentication
   extend Configurable
 

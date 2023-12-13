@@ -1,16 +1,9 @@
-= Authentication
-
-home  :: https://github.com/adam12/authentication
-code  :: https://github.com/adam12/authentication
-rdoc  :: https://gemdocs.org/gems/adam12-authentication
-bugs  :: https://github.com/adam12/authentication/issues
-
-== DESCRIPTION:
+# Authentication
 
 An API-first authentication library, with some functionality
 mirroring the Rodauth project.
 
-== FEATURES/PROBLEMS:
+## Features/problems
 
 I've found that I generally override so much of Rodauth functionality,
 I'm receiving less and less benefit of the built in HTTP interface that
@@ -23,28 +16,12 @@ The +internal_request+ plugin that was added to Rodauth mirrored what I had
 been doing for some time, but I'd still like to invert the problem, and
 call the API for most functionality.
 
-== SYNOPSIS:
 
-  FIX (code sample of usage)
+## Install
 
-== REQUIREMENTS:
+    bundle add adam12-authentication
 
-* FIX (list of requirements)
-
-== INSTALL:
-
-  bundle add adam12-authentication
-
-== DEVELOPERS:
-
-After checking out the source, run:
-
-  $ rake newb
-
-This task will install any missing dependencies, run the tests/specs,
-and generate the RDoc.
-
-== LICENSE:
+## License
 
 (The MIT License)
 
