@@ -12,7 +12,7 @@ it offers.
 I'd much rather control that interface and interact with an API focused
 version of that.
 
-The +internal_request+ plugin that was added to Rodauth mirrored what I had
+The `internal_request` plugin that was added to Rodauth mirrored what I had
 been doing for some time, but I'd still like to invert the problem, and
 call the API for most functionality.
 
