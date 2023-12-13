@@ -60,7 +60,7 @@ DEPENDENCIES
   adam12-authentication!
   bcrypt (~> 3.1)
   minitest (~> 5.17)
-  minitest-autotest (~> 1.1)
+  minitest-autotest
   rdoc (>= 4.0, < 7)
   sequel (~> 5.64)
   sqlite3 (~> 1.6)
