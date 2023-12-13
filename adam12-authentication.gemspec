@@ -22,7 +22,6 @@ Gem::Specification.new do |s|
 
   s.specification_version = 4
 
-  s.add_runtime_dependency(%q<dry-configurable>.freeze, ["~> 1.0"])
   s.add_development_dependency(%q<minitest>.freeze, ["~> 5.17"])
   s.add_development_dependency(%q<minitest-autotest>.freeze, ["~> 1.1"])
   s.add_development_dependency(%q<hoe-doofus>.freeze, ["~> 1.0"])

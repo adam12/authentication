@@ -2,20 +2,12 @@ PATH
   remote: .
   specs:
     adam12-authentication (0.0.1)
-      dry-configurable (~> 1.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
     bcrypt (3.1.20)
-    concurrent-ruby (1.2.0)
-    dry-configurable (1.0.1)
-      dry-core (~> 1.0, < 2)
-      zeitwerk (~> 2.6)
-    dry-core (1.0.0)
-      concurrent-ruby (~> 1.0)
-      zeitwerk (~> 2.6)
     hoe (4.1.0)
       rake (>= 0.8, < 15.0)
     hoe-doofus (1.0.0)
@@ -65,7 +57,6 @@ GEM
       rubocop-performance (= 1.15.2)
     stringio (3.0.4)
     unicode-display_width (2.4.2)
-    zeitwerk (2.6.6)
 
 PLATFORMS
   arm64-darwin-21
