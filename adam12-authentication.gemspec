@@ -4,7 +4,7 @@ require_relative "lib/authentication/version"
 
 Gem::Specification.new do |s|
   s.name = "adam12-authentication"
-  s.version = Authentication::VERSION 
+  s.version = Authentication::VERSION
   s.authors = "Adam Daniels"
   s.email = "adam@mediadrive.ca"
   s.summary = "An API-first authentication library, with some functionality mirroring the Rodauth project."
