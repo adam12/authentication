@@ -29,23 +29,23 @@ class Authentication
         # If the +username+ does not exist, raise +Errors::UnknownUsername+.
         # If the +password+ is invalid, raise +Errors::IncorrectPassord+.
         def sign_in(username, password, session)
-          instrument("authentication.sign_in", {username: username}) do
-            account = lookup_account(username)
+          account = lookup_account(username)
 
-            if account.nil?
-              instrument("authentication.unknown_username", {username: username})
-              raise Errors::UnknownUsername
-            end
-
-            if !validate_password(password, account[config.password_digest_column])
-              instrument("authentication.incorrect_password", {username: username})
-              raise Errors::IncorrectPassword
-            end
-
-            session[config.account_session_key.to_s] = account[:id]
-
-            account
+          if account.nil?
+            instrument("authentication.unknown_username", {username: username})
+            raise Errors::UnknownUsername
           end
+
+          if !validate_password(password, account[config.password_digest_column])
+            instrument("authentication.incorrect_password", {username: username})
+            raise Errors::IncorrectPassword
+          end
+
+          instrument("authentication.sign_in", {username: username}) do
+            session[config.account_session_key.to_s] = account[:id]
+          end
+
+          account
         end
       end
     end
