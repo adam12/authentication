@@ -32,12 +32,12 @@ class Authentication
           account = lookup_account(username)
 
           if account.nil?
-            instrument("authentication.unknown_username", {username: username})
+            instrument("authentication.sign_in.unknown_username", {username: username})
             raise Errors::UnknownUsername
           end
 
           if !validate_password(password, account[config.password_digest_column])
-            instrument("authentication.incorrect_password", {username: username})
+            instrument("authentication.sign_in.incorrect_password", {username: username})
             raise Errors::IncorrectPassword
           end
 
