@@ -1,16 +1,13 @@
 class Authentication
   module Plugins
-    ##
     # Plugin for sign-out functionality.
     module SignOut
       def self.before_load(mod, ...)
         mod.plugin SessionBase
       end
 
-      ##
       # Methods available on the instance of an Authentication class.
       module InstanceMethods
-        ##
         # Sign out any active user.
         #
         # Expects +session+ to be a Hash-like object.

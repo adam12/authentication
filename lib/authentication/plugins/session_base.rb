@@ -10,7 +10,6 @@ class Authentication
   end
 
   module Plugins
-    ##
     # Plugin for common functionality involving sessions.
     #
     # Expects +session+ to be a Hash or object of similar interface.
@@ -23,10 +22,8 @@ class Authentication
         end
       end
 
-      ##
       # Methods available on the instance of an Authentication class.
       module InstanceMethods
-        ##
         # Look up account from +session+.
         #
         # Returns a Hash of the account record.

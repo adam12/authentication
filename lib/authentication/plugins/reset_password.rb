@@ -5,7 +5,6 @@ class Authentication
   end
 
   module Plugins
-    ##
     # Plugin for resetting passwords of accounts.
     #
     # Example flow
@@ -31,10 +30,8 @@ class Authentication
         end
       end
 
-      ##
       # Methods available on the instance of an Authentication class.
       module InstanceMethods
-        ##
         # Reset password using provided +request_id+ and +new_password+.
         #
         # Returns true if successful.
@@ -57,7 +54,6 @@ class Authentication
           end
         end
 
-        ##
         # Generate a reset password request for +username+.
         #
         # Returns the generated +request_id+ which can be used as part of the
@@ -76,7 +72,6 @@ class Authentication
           end
         end
 
-        ##
         # Look up account for given +request_id+ to then be used to change password.
         #
         # Returns a Hash of the account record.

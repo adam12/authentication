@@ -1,6 +1,5 @@
 class Authentication
   module Plugins
-    ##
     # Base plugin for all account-related functionality.
     #
     # Specifically, shared concerns around where accounts are stored,
@@ -22,10 +21,8 @@ class Authentication
         end
       end
 
-      ##
       # Methods available on the instance of an Authentication class.
       module InstanceMethods
-        ##
         # Lookup account by +username+.
         #
         # Returns Hash of account, or nil if not found.
@@ -33,7 +30,6 @@ class Authentication
           db.from(config.accounts_table).first(config.username_column => username)
         end
 
-        ##
         # Lookup account by primary key +id+.
         #
         # Returns Hash of account, or nil if not found.

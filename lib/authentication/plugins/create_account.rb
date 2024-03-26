@@ -1,6 +1,5 @@
 class Authentication
   module Plugins
-    ##
     # Plugin for creating accounts.
     #
     #   class UserAuthentication < Authentication
@@ -14,10 +13,8 @@ class Authentication
         mod.plugin AccountBase
       end
 
-      ##
       # Methods available on the instance of an Authentication class.
       module InstanceMethods
-        ##
         # Create account with +username+ and +password+.
         #
         # Returns Hash of account created.

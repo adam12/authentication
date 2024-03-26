@@ -8,7 +8,6 @@ class Authentication
   end
 
   module Plugins
-    ##
     # Plugin for sign in functionality.
     module SignIn
       def self.before_load(mod, ...)
@@ -16,10 +15,8 @@ class Authentication
         mod.plugin SessionBase
       end
 
-      ##
       # Methods available on the instance of an Authentication class.
       module InstanceMethods
-        ##
         # Sign in with +username+ and +password+, updating +session+ if
         # +username+ and +password+ are valid.
         #

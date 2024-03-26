@@ -1,11 +1,9 @@
 class Authentication
   module Plugins
-    ##
     # Plugin for instrumenting calls to various methods.
     #
     # Accepts an instrumenter that matches the signature of ActiveSupport::Notifications.
     module Instrumenter
-      ##
       # An instrumenter that does nothing.
       module Noop
         def self.instrument(name, payload = {})
@@ -20,10 +18,8 @@ class Authentication
         end
       end
 
-      ##
       # Methods available on the instance of an Authentication class.
       module InstanceMethods
-        ##
         # Instrument the provided block.
         #
         # The actual implementation is instrument provider specific, but it is

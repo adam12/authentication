@@ -2,11 +2,9 @@ require_relative "authentication/plugins"
 require_relative "authentication/configurable"
 require_relative "authentication/version"
 
-##
 class Authentication
   extend Configurable
 
-  ##
   # Load plugin +mod+.
   #
   # If +mod+ includes an InstanceMethods module, include that module into the

@@ -1,16 +1,13 @@
 class Authentication
   module Plugins
-    ##
     # Methods for validating and creating BCrypt password digests.
     module BCrypt
       def self.before_load(*)
         require "bcrypt"
       end
 
-      ##
       # Methods available on the instance of an Authentication class.
       module InstanceMethods
-        ##
         # Convert string +password+ into BCrypt digest.
         #
         # :call-seq:
@@ -19,7 +16,6 @@ class Authentication
           ::BCrypt::Password.create(password)
         end
 
-        ##
         # Validate +plain+ password against +digest+. Returns +false+ if the
         # plain value does not match the digest.
         #
