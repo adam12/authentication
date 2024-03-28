@@ -39,10 +39,17 @@ class Authentication
           end
 
           instrument("authentication.sign_in", {username: username}) do
-            session[config.account_session_key.to_s] = account[:id]
+            signed_in(account, session)
           end
 
           account
+        end
+
+        # Set +account+ as signed in.
+        #
+        # Expects +session+ to be a Hash-like object.
+        def signed_in(account, session)
+          session[config.account_session_key.to_s] = account[:id]
         end
       end
     end
