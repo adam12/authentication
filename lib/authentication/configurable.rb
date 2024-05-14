@@ -19,7 +19,7 @@ class Authentication
           instance_variable_get(:@__settings__)[key]
         end
 
-        config.define_singleton_method("#{key}=") do |value|
+        config.define_singleton_method(:"#{key}=") do |value|
           instance_variable_get(:@__settings__)[key] = value
         end
 
@@ -29,7 +29,7 @@ class Authentication
           end
         end
 
-        config.send("#{key}=", default)
+        config.send(:"#{key}=", default)
       end
 
       def config
