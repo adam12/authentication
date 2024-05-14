@@ -1,11 +1,9 @@
 # frozen-string-literal: true
 
 class Authentication
-  ##
   # Configuration mixin.
   module Configurable
     module ClassMethods
-      ##
       # Define new configuration setting
       #
       # Uses the provided +key+ and optional +default+.
