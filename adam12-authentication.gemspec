@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "sqlite3", "~> 1.6"
   s.add_development_dependency "bcrypt", "~> 3.1"
   s.add_development_dependency "rdoc", ">= 4.0", "< 7"
+  s.add_development_dependency "covered", "~> 0.25"
 
   s.files = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- test/*`.split("\n")

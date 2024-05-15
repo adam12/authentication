@@ -1,3 +1,5 @@
+ENV["COVERAGE"] ||= "PartialSummary"
+require "covered/minitest"
 require "minitest/autorun"
 require "authentication"
 require "sequel"
