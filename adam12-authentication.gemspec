@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.license = "MIT"
 
   s.add_development_dependency "minitest", "~> 5.17"
-  s.add_development_dependency "standard", "~> 1.22.1"
+  s.add_development_dependency "standard", "~> 1.22"
   s.add_development_dependency "sequel", "~> 5.64"
   s.add_development_dependency "sqlite3", "~> 1.6"
   s.add_development_dependency "bcrypt", "~> 3.1"
