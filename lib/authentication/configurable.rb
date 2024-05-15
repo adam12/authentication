@@ -15,12 +15,16 @@ class Authentication
       # setting :db, reader: true
       # setting :accounts_table, default: :accounts_table
       def setting(key, default: nil, reader: false)
-        config.define_singleton_method(key) do
-          instance_variable_get(:@__settings__)[key]
+        unless config.respond_to?(key)
+          config.define_singleton_method(key) do
+            instance_variable_get(:@__settings__)[key]
+          end
         end
 
-        config.define_singleton_method(:"#{key}=") do |value|
-          instance_variable_get(:@__settings__)[key] = value
+        unless config.respond_to?(:"#{key}=")
+          config.define_singleton_method(:"#{key}=") do |value|
+            instance_variable_get(:@__settings__)[key] = value
+          end
         end
 
         if reader
