@@ -7,10 +7,10 @@ class Authentication
         authentication = Class.new(Authentication) do
           plugin Authentication::Plugins::SignIn
           config.db = DB
+          config.password_digest_column = :password_hash
         end.new
 
-        DB.autoid = 1
-        DB.fetch = {id: 1, password_digest: ::BCrypt::Password.create("password", cost: 1)}
+        create_account(email: "username", password: "password")
         session = {}
 
         assert authentication.sign_in("username", "password", session)
@@ -21,10 +21,9 @@ class Authentication
         authentication = Class.new(Authentication) do
           plugin Authentication::Plugins::SignIn
           config.db = DB
+          config.password_digest_column = :password_hash
         end.new
 
-        DB.autoid = 1
-        DB.fetch = nil
         session = {}
 
         assert_raises(Errors::UnknownUsername) do
@@ -38,10 +37,10 @@ class Authentication
         authentication = Class.new(Authentication) do
           plugin Authentication::Plugins::SignIn
           config.db = DB
+          config.password_digest_column = :password_hash
         end.new
 
-        DB.autoid = 1
-        DB.fetch = {id: 1, password_digest: ::BCrypt::Password.create("password", cost: 1)}
+        create_account(email: "username", password: "password")
         session = {}
 
         assert_raises(Errors::IncorrectPassword) do

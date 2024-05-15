@@ -7,10 +7,10 @@ class Authentication
         authentication = Class.new(Authentication) do
           plugin Authentication::Plugins::ChangePassword
           config.db = DB
+          config.password_digest_column = :password_hash
         end.new
 
-        DB.autoid = 1
-        DB.fetch = {id: 1, email: "user", password_digest: "foo"}
+        create_account(email: "user")
 
         assert authentication.change_password(1, "secret")
       end

@@ -7,6 +7,7 @@ class Authentication
         authentication = Class.new(Authentication) do
           plugin Authentication::Plugins::SignOut
           config.db = DB
+          config.password_digest_column = :password_hash
         end.new
 
         session = {"account_id" => 1}

@@ -9,10 +9,10 @@ class Authentication
         authentication = Class.new(Authentication) do
           plugin Authentication::Plugins::SessionBase
           config.db = DB
+          config.password_digest_column = :password_hash
         end.new
 
-        DB.autoid = 1
-        DB.fetch = {id: 1, email: "user", password_digest: "foo"}
+        create_account(email: "user", password: "foo")
 
         assert authentication.account_from_session(session)
       end
@@ -23,9 +23,8 @@ class Authentication
         authentication = Class.new(Authentication) do
           plugin Authentication::Plugins::SessionBase
           config.db = DB
+          config.password_digest_column = :password_hash
         end.new
-
-        DB.fetch = nil
 
         assert_raises(Errors::NoSession) do
           authentication.account_from_session(session)
@@ -38,9 +37,8 @@ class Authentication
         authentication = Class.new(Authentication) do
           plugin Authentication::Plugins::SessionBase
           config.db = DB
+          config.password_digest_column = :password_hash
         end.new
-
-        DB.fetch = nil
 
         assert_raises(Errors::InvalidAccount) do
           authentication.account_from_session(session)
