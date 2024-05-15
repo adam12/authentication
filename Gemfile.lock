@@ -55,6 +55,7 @@ GEM
     sequel (5.80.0)
       bigdecimal
     sqlite3 (1.7.3-arm64-darwin)
+    sqlite3 (1.7.3-x86_64-linux)
     standard (1.22.1)
       language_server-protocol (~> 3.17.0.2)
       rubocop (= 1.42.0)
@@ -65,6 +66,7 @@ GEM
 PLATFORMS
   arm64-darwin-21
   arm64-darwin-23
+  x86_64-linux
 
 DEPENDENCIES
   adam12-authentication!
