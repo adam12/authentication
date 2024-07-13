@@ -18,12 +18,12 @@ class Authentication
           SecureRandom.urlsafe_base64(32)
         end
 
-        # Shortcut to +db+ config value.
+        # Shortcut to `db` config value.
         def db
           self.class.db
         end
 
-        # Shortcut to +config+ value on class.
+        # Shortcut to `config` value on class.
         def config
           self.class.config
         end

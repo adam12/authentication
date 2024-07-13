@@ -2,12 +2,14 @@ class Authentication
   module Plugins
     # Plugin for changing account passwords.
     #
-    #   class UserAuthentication < Authentication
-    #     plugin Authentication::Plugins::ChangePassword
-    #   end
+    # ```ruby
+    # class UserAuthentication < Authentication
+    #   plugin Authentication::Plugins::ChangePassword
+    # end
     #
-    #   user_authentication = UserAuthentication.new
-    #   user_authentication.change_password(1, "new-password") # => true
+    # user_authentication = UserAuthentication.new
+    # user_authentication.change_password(1, "new-password") # => true
+    # ```
     module ChangePassword
       def self.before_load(mod, ...)
         mod.plugin AccountBase
@@ -15,7 +17,7 @@ class Authentication
 
       # Methods available on the instance of an Authentication class.
       module InstanceMethods
-        # Change password for +account_id+.
+        # Change password for `account_id`.
         def change_password(account_id, new_password)
           instrument("authentication.change_password", {account_id: account_id}) do
             password_digest = digest_password(new_password)

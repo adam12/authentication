@@ -10,7 +10,7 @@ class Authentication
       module InstanceMethods
         # Sign out any active user.
         #
-        # Expects +session+ to be a Hash-like object.
+        # Expects `session` to be a Hash-like object.
         def sign_out(session)
           instrument("authentication.sign_out") do |payload|
             payload[:account_id] = session.delete(config.account_session_key.to_s)

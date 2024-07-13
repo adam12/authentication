@@ -2,7 +2,7 @@ class Authentication
   module Plugins
     # Plugin for instrumenting calls to various methods.
     #
-    # Accepts an instrumenter that matches the signature of ActiveSupport::Notifications.
+    # Accepts an instrumenter that matches the signature of `ActiveSupport::Notifications`.
     module Instrumenter
       # An instrumenter that does nothing.
       module Noop

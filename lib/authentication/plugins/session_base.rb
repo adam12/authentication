@@ -12,7 +12,7 @@ class Authentication
   module Plugins
     # Plugin for common functionality involving sessions.
     #
-    # Expects +session+ to be a Hash or object of similar interface.
+    # Expects `session` to be a Hash or object of similar interface.
     module SessionBase
       def self.before_load(mod, ...)
         mod.plugin AccountBase
@@ -24,11 +24,11 @@ class Authentication
 
       # Methods available on the instance of an Authentication class.
       module InstanceMethods
-        # Look up account from +session+.
+        # Look up account from `session`.
         #
         # Returns a Hash of the account record.
-        # If the session doesn't contain a value, Errors::NoSession is raised.
-        # If the session contains a value but there is no account, Authentication::Errors::InvalidAccount is raised.
+        # If the session doesn't contain a value, `Errors::NoSession` is raised.
+        # If the session contains a value but there is no account, `Authentication::Errors::InvalidAccount` is raised.
         def account_from_session(session)
           account_id = session[config.account_session_key.to_s]
           raise Errors::NoSession if account_id.nil?

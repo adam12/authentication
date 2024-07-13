@@ -23,14 +23,14 @@ class Authentication
 
       # Methods available on the instance of an Authentication class.
       module InstanceMethods
-        # Lookup account by +username+.
+        # Lookup account by `username`.
         #
         # Returns Hash of account, or nil if not found.
         def lookup_account(username)
           db.from(config.accounts_table).first(config.username_column => username)
         end
 
-        # Lookup account by primary key +id+.
+        # Lookup account by primary key `id`.
         #
         # Returns Hash of account, or nil if not found.
         def lookup_account_by_id(id)

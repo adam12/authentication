@@ -17,14 +17,14 @@ class Authentication
 
       # Methods available on the instance of an Authentication class.
       module InstanceMethods
-        # Sign in with +username+ and +password+, updating +session+ if
-        # +username+ and +password+ are valid.
+        # Sign in with `username` and `password`, updating `session` if
+        # `username` and `password` are valid.
         #
-        # Expects +session+ to be a Hash-like object.
+        # Expects `session` to be a Hash-like object.
         #
         # Returns Hash of account if successful.
-        # If the +username+ does not exist, raise +Errors::UnknownUsername+.
-        # If the +password+ is invalid, raise +Errors::IncorrectPassord+.
+        # If the `username` does not exist, raise `Errors::UnknownUsername`.
+        # If the `password` is invalid, raise `Errors::IncorrectPassord`.
         def sign_in(username, password, session)
           account = lookup_account(username)
 
@@ -45,9 +45,9 @@ class Authentication
           account
         end
 
-        # Set +account+ as signed in.
+        # Set `account` as signed in.
         #
-        # Expects +session+ to be a Hash-like object.
+        # Expects `session` to be a Hash-like object.
         def signed_in(account, session)
           session[config.account_session_key.to_s] = account[:id]
         end

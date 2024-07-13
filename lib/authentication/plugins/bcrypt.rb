@@ -16,7 +16,7 @@ class Authentication
           ::BCrypt::Password.create(password)
         end
 
-        # Validate +plain+ password against +digest+. Returns +false+ if the
+        # Validate `plain` password against `digest`. Returns `false` if the
         # plain value does not match the digest.
         #
         # :call-seq:

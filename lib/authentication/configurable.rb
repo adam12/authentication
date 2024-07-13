@@ -6,14 +6,17 @@ class Authentication
     module ClassMethods
       # Define new configuration setting
       #
-      # Uses the provided +key+ and optional +default+.
+      # Uses the provided `key` and optional `default`.
       #
-      # If +reader+ is true, then an accessor will be defined on the base
+      # If `reader` is true, then an accessor will be defined on the base
       # class to fetch the value from the config.
       #
-      # == Examples
+      # ## Examples
+      #
+      # ```ruby
       # setting :db, reader: true
       # setting :accounts_table, default: :accounts_table
+      # ```
       def setting(key, default: nil, reader: false)
         unless config.respond_to?(key)
           config.define_singleton_method(key) do

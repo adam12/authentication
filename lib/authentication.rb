@@ -5,16 +5,16 @@ require_relative "authentication/version"
 class Authentication
   extend Configurable
 
-  # Load plugin +mod+.
+  # Load plugin `mod`.
   #
-  # If +mod+ includes an InstanceMethods module, include that module into the
-  # authentication class. Similarly, if +mod+ includes a ClassMethods module,
+  # If `mod` includes an InstanceMethods module, include that module into the
+  # authentication class. Similarly, if `mod` includes a ClassMethods module,
   # extend the authentication class with said module.
   #
-  # Before loading +mod+, call +before_load+ if possible. After loading +mod+,
-  # call +after_load+ if possible.
+  # Before loading `mod`, call `before_load` if possible. After loading `mod`,
+  # call `after_load` if possible.
   #
-  # Any additional arguments or blocks passed to +plugin+ are forwaded to the
+  # Any additional arguments or blocks passed to `plugin` are forwaded to the
   # plugin hooks.
   def self.plugin(mod, ...)
     mod.before_load(self, ...) if mod.respond_to?(:before_load)

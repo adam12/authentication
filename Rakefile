@@ -7,6 +7,7 @@ require "minitest/test_task"
 RDoc::Task.new do |rdoc|
   rdoc.main = "README.md"
   rdoc.rdoc_files.include("README.md", "lib/**/*.rb")
+  rdoc.markup = :markdown
 end
 
 Minitest::TestTask.create
